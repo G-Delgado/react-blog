@@ -4,10 +4,6 @@ function App() {
   const [backendData, setBackendData] = useState([]);
 
   async function getUsers() {
-      // fetch("/api")
-      // .then(res => res.json())
-      // .then(data => setBackendData(data))
-      // We can do it that way or
       return await fetch("/api")
       .then(res => res.json())
       .then(data => {
@@ -16,18 +12,9 @@ function App() {
       })
   }
 
-  // useEffect(() => {
-  //   // If proxy works we don't need to put the whole route
-  //   let data = fetch("/api").then(res => res.json())
-  //   setBackendData(data)
-  // }, [])
-  // let data =  fetch("/api").then(res => res.json())
-  // setBackendData(data)
-
   useEffect(() => {
     console.log("Sape")
     getUsers()
-    // console.log(backendData.users)
   },[])
 
   return (
